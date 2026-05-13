@@ -53,7 +53,7 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: "WebApplicationWestVet"
-          slot-name: "Production"
+          # Omit slot-name for the default production app; "Production" often mismatches publish profile validation.
           # Artifact is backend/ contents at root (see upload path backend/)
           package: .
           # Use the publish profile for *this* App Service (WestVet).
