@@ -29,6 +29,19 @@ app.get("/api", (req, res) => {
   return ok(res, { message: "Veterinary booking API is running." });
 });
 
+// Browsers often open /api/v1 alone; there is no other GET at this prefix.
+app.get("/api/v1", (req, res) => {
+  return ok(res, {
+    message: "Veterinary booking API v1.",
+    hint: "Use paths under /api/v1/auth, /api/v1/pets, etc. (see docs/api-spec.md).",
+    examples: [
+      "POST /api/v1/auth/register-owner",
+      "POST /api/v1/auth/login",
+      "GET /api/v1/auth/me (requires Authorization: Bearer <token>)"
+    ]
+  });
+});
+
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/pets", petsRoutes);
 app.use("/api/v1/appointments", appointmentsRoutes);
