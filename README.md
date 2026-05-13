@@ -12,6 +12,10 @@ This repository contains the starter structure for a cloud-based veterinary book
 - `database/` - SQL schema and migration-ready scripts
 - `docs/` - architecture and feature notes
 
+## Deploy on Azure
+
+See [docs/azure-deployment.md](docs/azure-deployment.md) for App Service, Azure SQL Database, and Blob Storage (CLI steps, env vars, and packaging the `backend/` folder).
+
 ## Quick Start
 
 1. Install dependencies:

@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'https://nestvetapplication-e2a0bzagaka3bhfq.eastasia-01.azurewebsites.net/api/v1'
-});
+// Azure App Service API (health: https://WebApplicationNestVet.azurewebsites.net/health)
+const API_BASE_URL = 'https://webapplicationnestvet.azurewebsites.net/api/v1';
 
 const api = axios.create({
-    baseURL: AZURE_BACKEND_URL,
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    withCredentials: true 
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  withCredentials: true,
 });
 
 api.interceptors.response.use(
